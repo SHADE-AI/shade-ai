@@ -22,7 +22,7 @@ localhost$ ssh username@ls6.tacc.utexas.edu
 localhost$ ssh username@longhorn.tacc.utexas.edu
 ```
 
-You will be prompted to enter your password followed by the multi-factor authentication (MFA) code. Welcome text, project/allocation information, and disk quotas will be presented upon successful login. By default, you will be located in your home directory (`echo $HOME` or `pwd` to see path), which is specific to each machine (i.e. it is not shared across systems). 
+You will be prompted to enter your password followed by the multi-factor authentication (MFA) code. Welcome text, project/allocation information, and disk quotas will be presented upon successful login. By default, you will be located in your home directory (`echo $HOME` or `pwd` to see path), which is specific to each machine (i.e. it is not shared across systems). Login nodes are shared resources and must accommodate hundreds of other user simultaneously. They are intended to be used for editing, compiling code, submiting jobs, file transfer, among other low impact tasks. Please do not run applications on the login nodes. 
 
 ### File Systems
 Each machine contains 3 standard file systems. Environment variables `$HOME`, `$WORK` and `$SCRATCH` store the paths to directories that you own on each filesystem. 
@@ -30,10 +30,22 @@ Each machine contains 3 standard file systems. Environment variables `$HOME`, `$
 | File System | Quota | Key Features|
 | ----------- | ----------------| --------------------------------- |
 | $HOME       | Frontera: 25GB<br />LS6: 10GB<br />Longhorn: 10GB| Not intended for parallel or high-intensity file operations.<br />Best for cron jobs, small scripts, envrionment settings.<br />Backed up regularly, not purged.   |
-| $WORK | 1TB across all TACC systems | Global Shared Filesystem<br />Not intended for high-intesnity file operations or jobs involving very large files. <br /> Good for storing software installations, original datasets, job scripts and templates.<br /> Not backed up, not purged. |
+| $STOCKYARD | 1TB across all TACC systems | Global Shared Filesystem<br />Not intended for high-intesnity file operations or jobs involving very large files. <br /> Good for storing software installations, original datasets, job scripts and templates.<br /> Not backed up, not purged. |
 | $SCRATCH | no quota | All job I/O activity, temporary storage.<br /> Files that have not been accessed in 10 or more days are subject to purge.|
 
 Note: different systems offer additional resources. For example, Frontera includes two additonal file systems, $SCRATCH2 and $SCRATCH3, which can accommodate intensive parallel I/O operations. Consult user guides for additional details. 
+
+### Stockyard
+Stockyard is the Global Shared File System at TACC. It is mounted on all major TACC clusters. The `$STOCKYARD` environment variable points to the highest level directory that you own on the shared file system. This variable is consistent across all TACC resources that mount Stockyard. The `$WORK` environment variable, on the other hand, is resource specific and varies across systems. `$WORK` is a subdirectory of `$STOCKYARD`. 
+```
+/work/12345/bjones/      #$STOCKYARD on all systems
+|
+|---> /frontera          #$WORK on frontera
+|
+|---> /lonestar6         #$WORK on LS6
+|
+|---> /longhorn          #$WORK on longhorn
+```
 
 ### Transferring Files
 For Linux-based systems, `scp` or `rsync` can be used to transfer files to TACC systems. Windows SSH clients typically include `scp`-based file transfer capabilities. To transfer a file to your home directory on Frontera:
