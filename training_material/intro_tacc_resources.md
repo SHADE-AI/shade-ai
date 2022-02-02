@@ -1,4 +1,4 @@
-# SHADE AI Gym: TACC Compute and Storage Quickstart
+# TACC Compute and Storage Quickstart
 
 ## Prerequisites 
 
