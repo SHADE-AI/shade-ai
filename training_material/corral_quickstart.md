@@ -1,4 +1,4 @@
-# SHADE-AI Gym: Corral Quickstart
+# Corral Quickstart
 
 [Corral](https://portal.tacc.utexas.edu/user-guides/corral) is a collection of storage and data management resources located at TACC. Corral services provide high-reliability, high-performance storage for research requiring persistent access to large quantities of structured or unstructured data. Such data could include data used in analysis or other computational and visualization tasks on other TACC resources, as well as data used in collaborations involving many researchers who need to share large amounts of data.
 
