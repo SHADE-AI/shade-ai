@@ -5,7 +5,7 @@ A dedicated JupyterHub is provided as part of the DARPA SHADE-AI Gym. Unlike bat
 ## Accessing the SHADE-AI JupyterHub
 In your browser, enter the following URL:
 ```
-https://shade.jupyter.tacc.cloud/hub/login
+https://shade.jupyter.tacc.cloud
 ```
 and login with your TACC username and password. If this is the first time you are logging in, it may take extra time to launch the instance. 
 
