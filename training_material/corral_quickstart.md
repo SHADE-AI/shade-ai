@@ -29,7 +29,7 @@ Within Performers/ are 7 directories reserved for each performer team. Access to
 
 **Cluster Access**
 
-Corral is mounted on the login nodes of Frontera, Longhorn, and Lonestar6. Additionally, corral is mounted on the compute nodes of Frontera and Lonestar6. For I/O intensive tasks, it may be more efficient to stage data by copying from Corral to the $SCRATCH or $WORK file systems on specific machines.
+Corral is mounted on the login and compute nodes of Frontera and Lonestar6. For I/O intensive tasks, it may be more efficient to stage data by copying from Corral to the $SCRATCH or $WORK file systems on specific machines. Data must be staged on Longhorn as Corral is not directly mounted. 
 
 **JupyterHub Access**
 
