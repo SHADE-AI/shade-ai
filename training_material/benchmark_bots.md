@@ -9,6 +9,7 @@ We have compiled and containerized several existing Diplomacy bots to assist in 
 |DipNetSL (original) | NA | -original version provided Paquette et. al<br />-launches singularity container on creation of DipNetSLPlayer | [Paquette et al.](https://arxiv.org/abs/1909.02128)|
 |DipNetSL          | tacc/dipnet_sl:v1  | -No-press bot developed by Paquette et. al<br />-runs a tensorflow model server which provides orders via DipNetSLPlayer class | [Paquette et al.](https://arxiv.org/abs/1909.02128)|
 |DipNetSL TF model server| tacc/dipnet_sl_tf_server:v1| -Tensorflow model server for DipNetSL<br />-A single running instance can support numerous DipNetSLPlayers<br />-separate code required to create/connect player and join game|[Paquette et al.](https://arxiv.org/abs/1909.02128)|
+|DipNetSL Controller| tacc/dipnet_sl_controller:v1| -Implements DipNetSLPlayer allowing for connection to remote TF server<br />-Decoupled from deploying TF server, allowing for multiple controllers to connect to same model server (above)|[Paquette et al.](https://arxiv.org/abs/1909.02128)|
 |Searchbot/DORA    | TBD                | -No-press bot developed by Facebook<br />-requires a translation layer to Paquette's game engine| [Bakhtin et al.](https://arxiv.org/pdf/2110.02924.pdf)|
 |Deepmind          | TBD                | -No-press bot developed by Deepmind<br />-requires a translation layer which they provide to Paquette's game engine| [Anthony et al.](https://arxiv.org/abs/2006.04635)|
 
@@ -139,3 +140,21 @@ singularity run docker://tacc/dumbbot:v1 --host $HOST  --game_id $GAME_ID --powe
 ```
 
 We have not extensively tested various combinations of bots benchmark bots playing one another. If you find that some configuration fails, please let us know. Also if you have a bot (e.g. Searchbot/DORA) that is able to connect and play a game with Paquette's game engine and would like to include that in the benchmark suite, please let the TACC team know. 
+
+Example: DipNetSL controller
+```shell
+docker run -it tacc/dipnet_sl_controller:v1 --help
+usage: run_dipnet.py [-h] [--host HOST] [--port PORT] [--game_id GAME_ID]
+                     [--power POWER] [--outdir OUTDIR] [--tf_port TF_PORT]
+                     [--tf_host TF_HOST]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --host HOST
+  --port PORT
+  --game_id GAME_ID
+  --power POWER
+  --outdir OUTDIR
+  --tf_port TF_PORT
+  --tf_host TF_HOST
+```
