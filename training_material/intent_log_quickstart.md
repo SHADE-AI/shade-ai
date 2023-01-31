@@ -1,5 +1,13 @@
 # Intent Logging Quickstart
-The (Paquette) Diplomacy engine has been modified to include the ability to log metadata (e.g. intent associated with messages, general strategy, world observations, etc.). Changes were made in the client and server code to create a dedicated, power-specific logging mechanism. Logging follows the same pattern as game messaging. 
+The (Paquette) Diplomacy engine has been modified to include the ability to log metadata (e.g. intent associated with messages, general strategy, world observations, etc.). Changes were made in the client and server code to create a dedicated, power-specific logging mechanism. Logging follows the same pattern as game messaging, detailed below. 
+
+## Checkout branch: `intent_log`
+
+Checkout the `intent_log` branch in the diplomacy repo. Note: shade.tacc.utexas.edu will continue to use the `development` branch while the teams transition to the updated codebase. Consequently, client code from the `intent_log` branch is not expected to work with the server code from the `development` branch`.
+
+## Test with development server
+
+To test out the new logging API, you can use the following server, shade-dev.tacc.utexas.edu (UI: port 3000 and engine: port 8432). The `intent_log` branch will be merged with `development` and re-launched on shade.tacc.utexas.edu in the future, but prior to the next evaluation. Note: the UI currently does not display the logs but you can download the game state file to view. 
 
 ## New data structures
 
