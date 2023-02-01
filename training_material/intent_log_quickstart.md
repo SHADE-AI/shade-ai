@@ -3,7 +3,7 @@ The (Paquette) Diplomacy engine has been modified to include the ability to log 
 
 ## Checkout branch: `intent_log`
 
-Checkout the `intent_log` branch in the diplomacy repo. Note: shade.tacc.utexas.edu will continue to use the `development` branch while the teams transition to the updated codebase. Consequently, client code from the `intent_log` branch is not expected to work with the server code from the `development` branch`.
+Checkout the `intent_log` branch in the diplomacy repo. Note: shade.tacc.utexas.edu will continue to use the `development` branch while the teams transition to the updated codebase. Consequently, client code from the `intent_log` branch is not expected to work with the server code from the `development` branch.
 
 ## Test with development server
 
