@@ -102,7 +102,7 @@ game.add_on_game_message_received(on_message_received)
 
         WHILE diplomacy
           send messages
-          received and respond to messages using callback
+          receive, process and respond to messages
           IF elapsed time >= diplomacy_time
             diplomacy = False
 
